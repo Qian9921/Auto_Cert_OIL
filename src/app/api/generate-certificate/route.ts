@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1004" 
           y="660" 
-          font-family="'Pacifico', 'Dancing Script', 'Satisfy', 'Brush Script MT', 'Comic Sans MS', cursive" 
+          font-family="'Pacifico', 'Lobster Two', 'Caveat', 'Dancing Script', 'Satisfy', 'Brush Script MT', cursive" 
           font-size="100" 
           font-weight="bold" 
           text-anchor="middle"
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1106" 
           y="810" 
-          font-family="'Dancing Script', 'Satisfy', 'Brush Script MT', 'Comic Sans MS', cursive" 
+          font-family="'Dancing Script', 'Caveat', 'Satisfy', 'Noto Sans', sans-serif" 
           font-size="40"  
           text-anchor="middle" 
           fill="#8B4513"
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1337" 
           y="1250" 
-          font-family="'Liberation Sans', 'DejaVu Sans', Arial, Helvetica, sans-serif" 
+          font-family="'Liberation Sans', 'Noto Sans', 'Open Sans', 'DejaVu Sans', sans-serif" 
           font-size="70" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="689" 
           y="1200" 
-          font-family="'Satisfy', 'Pacifico', 'Dancing Script', 'Brush Script MT', cursive" 
+          font-family="'Satisfy', 'Pacifico', 'Caveat', 'Dancing Script', cursive" 
           font-size="60" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="979" 
           y="915" 
-          font-family="'Liberation Sans', 'DejaVu Sans', Arial, Helvetica, sans-serif" 
+          font-family="'Liberation Sans', 'Noto Sans', 'Open Sans', 'DejaVu Sans', sans-serif" 
           font-size="40" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1337" 
           y="1190" 
-          font-family="'Liberation Sans', 'DejaVu Sans', Arial, Helvetica, sans-serif" 
+          font-family="'Liberation Sans', 'Noto Sans', 'Open Sans', 'DejaVu Sans', sans-serif" 
           font-size="60" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"

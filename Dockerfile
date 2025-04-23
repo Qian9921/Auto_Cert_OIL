@@ -2,30 +2,32 @@
 FROM node:18-alpine
 
 # 安装基本工具和依赖
-RUN apk add --no-cache fontconfig ttf-dejavu curl wget unzip
+RUN apk add --no-cache fontconfig ttf-dejavu git
 
 # 添加更多字体
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
-    font-noto font-noto-cjk ttf-liberation msttcorefonts-installer
+    font-noto font-noto-cjk ttf-liberation font-noto-extra \
+    ttf-font-awesome terminus-font ttf-opensans font-bakoma \
+    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
+    ttf-hack ttf-inconsolata font-fantasque-sans 
 
-# 运行msttcorefonts安装器 (包含Script MT Bold类似字体)
-RUN update-ms-fonts
+# 创建字体目录
+RUN mkdir -p /usr/share/fonts/truetype/custom
 
-# 安装更多装饰性字体
-RUN mkdir -p /usr/share/fonts/truetype/google-fonts
+# 直接下载单个TTF字体文件 (更可靠的方法)
+# 手写风格字体: Pacifico
+RUN wget -O /usr/share/fonts/truetype/custom/pacifico.ttf "https://github.com/google/fonts/raw/main/ofl/pacifico/Pacifico-Regular.ttf"
+# 手写风格字体: Satisfy
+RUN wget -O /usr/share/fonts/truetype/custom/satisfy.ttf "https://github.com/google/fonts/raw/main/apache/satisfy/Satisfy-Regular.ttf"
+# 手写风格字体: DancingScript
+RUN wget -O /usr/share/fonts/truetype/custom/dancingscript.ttf "https://github.com/google/fonts/raw/main/ofl/dancingscript/DancingScript%5Bwght%5D.ttf"
+# 手写风格字体: Caveat
+RUN wget -O /usr/share/fonts/truetype/custom/caveat.ttf "https://github.com/google/fonts/raw/main/ofl/caveat/Caveat%5Bwght%5D.ttf"
+# 艺术风格字体: LobsterTwo
+RUN wget -O /usr/share/fonts/truetype/custom/lobstertwo.ttf "https://github.com/google/fonts/raw/main/ofl/lobstertwo/LobsterTwo-Regular.ttf"
 
-# 下载和安装Google Fonts中类似Playwrite的字体
-RUN wget -O pacifico.zip "https://fonts.google.com/download?family=Pacifico" && \
-    unzip pacifico.zip -d /usr/share/fonts/truetype/google-fonts && \
-    rm pacifico.zip
-
-RUN wget -O dancing.zip "https://fonts.google.com/download?family=Dancing%20Script" && \
-    unzip dancing.zip -d /usr/share/fonts/truetype/google-fonts && \
-    rm dancing.zip
-
-RUN wget -O satisfy.zip "https://fonts.google.com/download?family=Satisfy" && \
-    unzip satisfy.zip -d /usr/share/fonts/truetype/google-fonts && \
-    rm satisfy.zip
+# 设置字体权限
+RUN chmod 644 /usr/share/fonts/truetype/custom/*
 
 # 更新字体缓存
 RUN fc-cache -fv
