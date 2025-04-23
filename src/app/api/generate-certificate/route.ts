@@ -18,8 +18,7 @@ export async function POST(req: NextRequest) {
     // 读取PNG模板
     const templatePath = path.join(process.cwd(), 'public', '1.png');
     
-    // 准备SVG文本覆盖层
-    // 为了获得更好的控制，我们为每个文本字段创建单独的SVG元素
+    // 准备SVG文本覆盖层 - 使用多个备选装饰性字体
     const svgText = `
       <svg width="1800" height="1300">
         <!-- 定义样式效果 -->
@@ -31,11 +30,11 @@ export async function POST(req: NextRequest) {
           </linearGradient>
         </defs>
 
-        <!-- 学生姓名 - 使用Playwrite RO字体 -->
+        <!-- 学生姓名 - 使用华丽字体，多个备选 -->
         <text 
           x="1004" 
           y="660" 
-          font-family="'Playwrite RO', 'Script MT Bold', cursive" 
+          font-family="'Pacifico', 'Dancing Script', 'Satisfy', 'Brush Script MT', 'Comic Sans MS', cursive" 
           font-size="100" 
           font-weight="bold" 
           text-anchor="middle"
@@ -50,7 +49,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1106" 
           y="810" 
-          font-family="'Playwrite RO', 'Script MT Bold', cursive" 
+          font-family="'Dancing Script', 'Satisfy', 'Brush Script MT', 'Comic Sans MS', cursive" 
           font-size="40"  
           text-anchor="middle" 
           fill="#8B4513"
@@ -62,7 +61,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1337" 
           y="1250" 
-          font-family="Arial, Helvetica, sans-serif" 
+          font-family="'Liberation Sans', 'DejaVu Sans', Arial, Helvetica, sans-serif" 
           font-size="70" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
@@ -74,7 +73,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="689" 
           y="1200" 
-          font-family="'Playwrite RO', 'Script MT Bold', cursive" 
+          font-family="'Satisfy', 'Pacifico', 'Dancing Script', 'Brush Script MT', cursive" 
           font-size="60" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
@@ -86,7 +85,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="979" 
           y="915" 
-          font-family="Arial, Helvetica, sans-serif" 
+          font-family="'Liberation Sans', 'DejaVu Sans', Arial, Helvetica, sans-serif" 
           font-size="40" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
@@ -98,7 +97,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="1337" 
           y="1190" 
-          font-family="Arial, Helvetica, sans-serif" 
+          font-family="'Liberation Sans', 'DejaVu Sans', Arial, Helvetica, sans-serif" 
           font-size="60" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"
