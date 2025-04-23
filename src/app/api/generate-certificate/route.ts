@@ -132,7 +132,7 @@ export async function POST(req: NextRequest) {
     if (global.gc) {
       try {
         global.gc();
-      } catch (_) {
+      } catch {
         // 忽略，如果gc不可用
       }
     }
