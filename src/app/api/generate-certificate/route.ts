@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
@@ -40,7 +39,7 @@ export async function POST(req: NextRequest) {
           font-size="100" 
           font-weight="bold" 
           text-anchor="middle"
-          fill="rgb(0, 0, 0)"
+          fill="url(#gold-gradient)"
           stroke="#8B4513"
           stroke-width="1"
         >
@@ -51,10 +50,10 @@ export async function POST(req: NextRequest) {
         <text 
           x="1106" 
           y="810" 
-          font-family="Arial, Helvetica, sans-serif" 
+          font-family="'Playwrite RO', 'Script MT Bold', cursive" 
           font-size="40"  
           text-anchor="middle" 
-          fill="rgb(0, 0, 0)"
+          fill="#8B4513"
         >
           ${studentName}
         </text>
@@ -75,7 +74,7 @@ export async function POST(req: NextRequest) {
         <text 
           x="689" 
           y="1200" 
-          font-family="'Script MT Bold', cursive" 
+          font-family="'Playwrite RO', 'Script MT Bold', cursive" 
           font-size="60" 
           text-anchor="middle" 
           fill="rgb(0, 0, 0)"

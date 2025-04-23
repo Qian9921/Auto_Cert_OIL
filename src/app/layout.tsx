@@ -25,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet" />
+        {/* 将自定义字体的链接放在head标签中，但最好使用next/font代替 */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
